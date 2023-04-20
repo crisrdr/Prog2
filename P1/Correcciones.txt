@@ -1,0 +1,13 @@
+1. map_readFromFile
+
+Por último, al leer char a char, no habéis tenido en cuenta que hay símbolos 
+al final de cada línea además del '\n' que os estaba rompiendo la lectura. 
+Esto, combinado con insertPoint que está haciendo un hardcpy en vez de una 
+asignación normal, hace que os de core dumped.
+
+5. map_equal
+
+Da segmentation fault si llamo a equal de un mapa NULL.
+
+La función map_equal no funciona correctamente. Por un lado, al comprobar 
+ncols y nrows, si son diferentes dice que son iguales.
